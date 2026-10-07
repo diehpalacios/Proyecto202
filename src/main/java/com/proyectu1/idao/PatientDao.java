@@ -15,6 +15,6 @@ public interface PatientDao {
 
     boolean update(Patient patient);
 
-    List<Patient> getPatientsByDoctorId(int doctor_id);
+    List<Patient> getPatientsByDoctorId(int doctor_id); // Tarea 1
 
 }

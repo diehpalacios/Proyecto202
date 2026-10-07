@@ -9,7 +9,7 @@ public class Patient {
     private int age;
     private String phone;
     private String disease;
-    private Doctor doctor; // Objeto asociado según el patrón Repositorio
+    private Doctor doctor;
 
     public Patient() {
     }

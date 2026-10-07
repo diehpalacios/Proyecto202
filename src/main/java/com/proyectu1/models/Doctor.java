@@ -1,5 +1,7 @@
 package com.proyectu1.models;
 
+import java.util.List;
+
 public class Doctor {
     private int id;
     private String name;
@@ -7,6 +9,7 @@ public class Doctor {
     private String dni;
     private double salary;
     private String speciality;
+    private List<Patient> attendedPatients; // Tarea 1
 
     public Doctor(int id, String name, String lastname, String dni, double salary, String speciality) {
         this.id = id;
@@ -65,6 +68,13 @@ public class Doctor {
         this.speciality = speciality;
     }
 
+    public List<Patient> getAttendedPatients() {
+        return attendedPatients;
+    }
+
+    public void setAttendedPatients(List<Patient> attendedPatients) {
+        this.attendedPatients = attendedPatients;
+    }
 
     @Override
     public String toString() {

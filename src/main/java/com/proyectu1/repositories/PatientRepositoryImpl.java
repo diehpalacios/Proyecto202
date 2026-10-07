@@ -22,6 +22,7 @@ public class PatientRepositoryImpl implements PatientRepository {
         return patient;
     }
 
+    // Tarea 2
     @Override
     public boolean isPatientAttendedByDoctor(int patient_id, int doctor_id) {
         Patient patient = patientDao.getPatient(patient_id);
