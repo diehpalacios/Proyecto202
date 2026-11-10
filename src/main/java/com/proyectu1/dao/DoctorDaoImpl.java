@@ -46,20 +46,31 @@ public class DoctorDaoImpl implements DoctorDao {
     public Doctor getDoctor(int id) {
         String query = "SELECT * FROM doctors WHERE id = ?";
         Doctor doctor = null;
-        try (Connection conn = DatabaseConnection.getInstance().getConnection();
-             PreparedStatement ps = conn.prepareStatement(query)) {
-            ps.setInt(1, id);
-            try (ResultSet rs = ps.executeQuery()) {
-                doctor = new Doctor(
-                        rs.getInt("id"), rs.getString("name"),
-                        rs.getString("lastname"), rs.getString("dni"),
-                        rs.getDouble("salary"), rs.getString("speciality")
+        try {
+            // La conexión NO se mete en try-with-resources para no cerrar el Singleton
+            Connection conn = DatabaseConnection.getInstance().getConnection();
 
-                );
+            try (PreparedStatement ps = conn.prepareStatement(query)) {
+                ps.setInt(1, id);
+
+                try (ResultSet rs = ps.executeQuery()) {
+                    // 1. OBLIGATORIO: Verificar y mover el cursor a la fila devuelta
+                    if (rs.next()) {
+                        doctor = new Doctor(
+                                rs.getInt("id"),
+                                rs.getString("name"),
+                                rs.getString("lastname"),
+                                rs.getString("dni"),
+                                rs.getDouble("salary"),
+                                rs.getString("speciality")
+                        );
+                    }
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return doctor;
     }
 

@@ -91,7 +91,7 @@ public class Patient {
 
     @Override
     public String toString() {
-        return "Patient{" + "id=" + id + ", name='" + name + '\'' + ", disease='" + disease + '\'' +
-                ", doctor=" + (doctor != null ? doctor.getName() : "Sin asignar") + '}';
+        return "Patient{ " + "id = " + id + ", name = '" + name + '\'' + ", disease = '" + disease + '\'' +
+                ", doctor = " + (doctor != null ? doctor.getName() : "Sin asignar") + '}';
     }
 }

@@ -78,13 +78,13 @@ public class Doctor {
 
     @Override
     public String toString() {
-        return "Doctor{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", lastname='" + lastname + '\'' +
-                ", dni='" + dni + '\'' +
-                ", salary=" + salary +
-                ", speciality='" + speciality + '\'' +
+        return "Doctor{ " +
+                "id = " + id +
+                ", name = '" + name + '\'' +
+                ", lastname = '" + lastname + '\'' +
+                ", dni = '" + dni + '\'' +
+                ", salary = " + salary +
+                ", speciality = '" + speciality + '\'' +
                 '}';
     }
 }

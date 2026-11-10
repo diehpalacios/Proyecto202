@@ -12,9 +12,9 @@ public class DatabaseConnection {
         try {
             String driver = "org.mariadb.jdbc.Driver";
             Class.forName(driver);
-            String url = "jdbc:mariadb://localhost:33060/practica200";
+            String url = "jdbc:mariadb://localhost:3306/practica200";
             String user = "root";
-            String password = "12345Abcde";
+            String password = "rootpassword";
             this.connection = DriverManager.getConnection(url, user, password);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
